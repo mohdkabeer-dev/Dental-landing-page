@@ -23,7 +23,7 @@ It focuses on **clean design**, **basic navigation**, and **section-based UI** s
 ## 🧩 Tech Stack
 
 - **React JS**
-- **CSS / Basic Styling**
+- **CSS**
 - **HTML5 / JSX**
 
 ---
