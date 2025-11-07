@@ -1,0 +1,1256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: "Michroma", sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navigation Styles */
+nav {
+  height: 10vh;
+  min-height: 60px;
+  width: 100%;
+  background-color: #111111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 80px 15px 120px;
+  position: relative;
+  z-index: 1000;
+}
+
+nav p {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.fa-bars {
+  color: #fd592c;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  /* display: none; */
+}
+
+.fa-bars:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 999;
+  transition: right 0.4s ease;
+  padding: 80px 30px 30px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 25px;
+}
+
+.mobile-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+  background-color: #fd592c;
+  transform: translateX(5px);
+}
+
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 2rem;
+  color: #fd592c;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-close:hover {
+  transform: rotate(90deg);
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.info button {
+  background-color: transparent;
+  border: 3px solid #fd592c;
+  color: #fd592c;
+  font-size: 1.05rem;
+  border-radius: 5px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info button:hover {
+  background-color: #fd592c;
+  color: #fff;
+}
+
+.btnProp {
+  background-color: #fd592c;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 20px 47px;
+}
+
+.wrapper {
+  background-color: #333;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.infoCard {
+  width: 50%;
+  min-height: 90vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  width: 80%;
+  max-width: 650px;
+  min-height: 70vh;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info h1 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #222;
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.info p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.imgBox {
+  width: 50%;
+  min-height: 90vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.imgBox img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  border-top-left-radius: 45%;
+  border-bottom-left-radius: 45%;
+}
+
+.serviceCard {
+  width: 300px;
+  min-height: 250px;
+  background-color: #fd592c;
+  border-radius: 10px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+
+.serviceCard div {
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.serviceCard div img {
+  filter: invert(100%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.serviceCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.serviceCard p {
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.SCard {
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 70px 40px;
+}
+
+.missionContainer {
+  width: 100vw;
+  min-height: 100vh;
+  color: #fff;
+  padding: 12vh 5vw;
+  display: grid;
+  background-color: #000;
+  grid-template-columns: repeat(2, minmax(300px, 550px));
+  grid-template-rows: auto auto;
+  place-content: center;
+  gap: 30px;
+}
+
+.missionBox {
+  padding: 20px;
+  position: relative;
+  padding-left: 50px;
+}
+
+.missionBox:nth-child(1) {
+  font-size: 1.7rem;
+  grid-column: 1/3;
+  text-align: center;
+  grid-row: 1/2;
+  padding-left: 20px;
+}
+
+.missionBox h2 {
+  margin-bottom: 20px;
+  line-height: 1.3;
+  font-size: 1.5rem;
+}
+
+.missionBox p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.missionBox::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fd592c;
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+
+.missionBox.heading::before {
+  content: none;
+}
+
+.section4 {
+  width: 100vw;
+  /* min-height: 80vh; */
+  display: flex;
+  align-items: stretch;
+}
+
+.aboutUs {
+  width: 55%;
+  /* height: 100%; */
+  background-color: #E1DCE0;
+  padding: 80px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutImg {
+  width: 45%;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aboutImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutInfo {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.aboutContainer h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #111;
+  letter-spacing: 0.5px;
+  margin-bottom: 2vh;
+}
+
+.aboutContainer h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fd592c;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.aboutContainer span {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #222;
+}
+
+.aboutContainer p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.aboutContainer p:nth-child(1){
+  margin-top: 5vh;
+}
+
+
+footer {
+  width: 100vw;
+  min-height: 20vh;
+  background-color: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+footer span {
+  color: #fd592c;
+}
+
+footer i {
+  color: #fff;
+}
+
+.socialLinks div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.socialLinks div i {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.socialLinks div i:hover {
+  color: #fd592c;
+}
+
+.section5 {
+  background-color: whitesmoke;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.section5 h1 {
+  text-align: center;
+  padding-top: 12vh;
+  margin-bottom: 60px;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.feedbackContainer {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.feedCard {
+  width: 300px;
+  min-height: 350px;
+  background-color: #fd592c;
+  border-radius: 10px;
+  padding: 25px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.feedCard:hover {
+  transform: translateY(-5px);
+}
+
+.feedCard i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #FF9C80;
+}
+
+.feedCard .fPara {
+  border-bottom: 2px solid #FF9C80;
+  width: 100%;
+  flex: 1;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  line-height: 1.5;
+}
+
+.feedCard .fTime {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.feedCard .fPara div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.section6 {
+  width: 100%;
+  min-height: 200vh;
+  background-color: #fd592c;
+  padding-bottom: 80px;
+}
+
+.section7 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fd592c;
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: #333;
+  background-color: #fd592c;
+  padding: 0 40px 60px 40px;
+}
+
+.profileCard {
+  width: 350px;
+  min-height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  /* margin-top: 10vh; */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.profileCard:hover {
+  transform: translateY(-5px);
+}
+
+.profileCard .imgDiv {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.profileCard .imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.section6 h1 {
+  text-align: center;
+  padding-top: 10vh;
+  margin-bottom: 3vh;
+  font-size: 2.5rem;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.section6 #tagline {
+  color: #eee2e2;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 40px;
+  margin-bottom: 15vh;
+}
+
+.profileCard .PInfo {
+  width: 100%;
+  padding: 0 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileCard .PInfo h4 {
+  color: #a3a1a1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.profileCard .PInfo h2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+.profileCard .PInfo p {
+  margin-bottom: 30px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.profileCard .Plinks {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.profileCard .Plinks i {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.profileCard .Plinks i:hover {
+  color: #fd592c;
+}
+
+/* Laptop and smaller desktops */
+@media screen and (max-width: 1400px) {
+  .missionContainer {
+    grid-template-columns: repeat(2, minmax(280px, 450px));
+    padding: 10vh 4vw;
+    gap: 25px;
+  }
+
+  .profileCard {
+    width: 320px;
+    min-height: 480px;
+  }
+
+  .aboutUs {
+    padding: 70px 50px;
+  }
+
+  .aboutContainer h1,
+  .aboutContainer span {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  nav {
+    padding: 15px 25px;
+  }
+
+  nav p {
+    font-size: 2rem;
+  }
+
+  .fa-bars {
+    display: block;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .infoCard {
+    width: 100%;
+    min-height: auto;
+    padding: 60px 30px;
+  }
+
+  .info {
+    width: 90%;
+    min-height: auto;
+    padding: 40px 30px;
+  }
+
+  .info h1 {
+    font-size: 2.3rem;
+  }
+
+  .imgBox {
+    width: 100%;
+    min-height: 60vh;
+    padding: 40px;
+  }
+
+  .imgBox img {
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .SCard {
+    gap: 30px;
+    padding: 60px 30px;
+    justify-content: center;
+  }
+
+  .serviceCard {
+    width: 280px;
+    min-height: 240px;
+  }
+
+  .missionContainer {
+    grid-template-columns: 1fr;
+    padding: 8vh 6vw;
+    gap: 30px;
+  }
+
+  .missionBox:nth-child(1) {
+    grid-column: 1;
+    font-size: 1.5rem;
+    padding-left: 20px;
+  }
+
+  .missionBox {
+    padding-left: 45px;
+  }
+
+  .missionBox::before {
+    width: 25px;
+    height: 25px;
+    top: 22px;
+  }
+
+  .section4 {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .aboutUs {
+    width: 100%;
+    padding: 70px 50px;
+  }
+
+  .aboutImg {
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  .aboutInfo {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .aboutContainer h2 {
+    font-size: 1.3rem;
+  }
+
+  .aboutContainer h1,
+  .aboutContainer span {
+    font-size: 2.3rem;
+  }
+
+  .aboutContainer p {
+    font-size: 1rem;
+  }
+
+  .feedbackContainer {
+    gap: 35px;
+    padding: 40px 30px;
+  }
+
+  .section5 {
+    padding-bottom: 60px;
+  }
+
+  .section5 h1 {
+    font-size: 2.5rem;
+    padding-top: 10vh;
+    margin-bottom: 50px;
+  }
+
+  .section6 {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .section6 h1 {
+    font-size: 2.2rem;
+  }
+
+  .section6 #tagline {
+    font-size: 1.3em;
+  }
+
+  .profileContainer {
+    gap: 35px;
+    padding: 0 30px 50px 30px;
+    justify-content: center;
+  }
+
+  .profileCard {
+    width: 300px;
+    min-height: 460px;
+  }
+}
+
+/* Mobile landscape and small tablets */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 12px 20px;
+  }
+
+  nav p {
+    font-size: 1.6rem;
+  }
+
+  .fa-bars {
+    font-size: 1.6rem;
+  }
+
+  .mobile-menu {
+    width: 260px;
+    padding: 70px 25px 25px;
+  }
+
+  .infoCard {
+    padding: 50px 25px;
+  }
+
+  .info {
+    width: 95%;
+    padding: 35px 25px;
+  }
+
+  .info h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .info p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+  }
+
+  .btnProp {
+    padding: 16px 38px;
+  }
+
+  .imgBox {
+    padding: 30px;
+    min-height: 50vh;
+  }
+
+  .serviceCard {
+    width: 100%;
+    max-width: 320px;
+    min-height: 230px;
+    padding: 28px;
+  }
+
+  .SCard {
+    padding: 50px 20px;
+    gap: 25px;
+  }
+
+  .missionContainer {
+    padding: 6vh 5vw;
+    gap: 25px;
+  }
+
+  .missionBox {
+    padding: 18px 15px 18px 40px;
+  }
+
+  .missionBox:nth-child(1) {
+    font-size: 1.3rem;
+    padding: 18px;
+  }
+
+  .missionBox h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .missionBox::before {
+    width: 22px;
+    height: 22px;
+  }
+
+  .aboutUs {
+    padding: 60px 35px;
+  }
+
+  .aboutInfo {
+    padding: 0 10px;
+  }
+
+  .aboutContainer h2 {
+    font-size: 1.2rem;
+  }
+
+  .aboutContainer h1,
+  .aboutContainer span {
+    font-size: 2rem;
+  }
+
+  .aboutContainer p {
+    font-size: 0.98rem;
+  }
+
+  .socialLinks {
+    margin-left: 25px;
+  }
+
+  .socialLinks div {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+  }
+
+  .socialLinks div i {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    padding: 30px 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section5 {
+    padding-bottom: 50px;
+  }
+
+  .section5 h1 {
+    font-size: 2.1rem;
+    padding-top: 8vh;
+    margin-bottom: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .feedbackContainer {
+    padding: 35px 20px;
+    gap: 28px;
+  }
+
+  .feedCard {
+    width: 100%;
+    max-width: 320px;
+    min-height: 340px;
+    padding: 22px;
+  }
+
+  .feedCard i {
+    font-size: 2.5rem;
+  }
+
+  .section6 h1 {
+    font-size: 1.9rem;
+    padding-top: 8vh;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .section6 #tagline {
+    font-size: 1.15em;
+    padding: 0 30px;
+  }
+
+  .profileContainer {
+    gap: 30px;
+    padding: 0 20px 40px 20px;
+  }
+
+  .profileCard {
+    width: 100%;
+    max-width: 320px;
+    min-height: 450px;
+    padding: 18px;
+  }
+
+  .profileCard .imgDiv {
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .profileCard .PInfo {
+    padding: 0 8px;
+  }
+
+  .profileCard .PInfo h2 {
+    font-size: 1.2rem;
+  }
+
+  .profileCard .PInfo p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+  }
+
+  .profileCard .Plinks i {
+    font-size: 1.3rem;
+    margin-right: 12px;
+  }
+}
+
+/* Mobile portrait */
+@media screen and (max-width: 480px) {
+  nav p {
+    font-size: 1.3rem;
+  }
+
+  .fa-bars {
+    font-size: 1.4rem;
+  }
+
+  .mobile-menu {
+    width: 240px;
+    padding: 65px 20px 20px;
+  }
+
+  .mobile-menu ul li {
+    margin-bottom: 20px;
+  }
+
+  .mobile-menu ul li a {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  .infoCard {
+    padding: 40px 20px;
+  }
+
+  .info {
+    padding: 30px 20px;
+  }
+
+  .info h1 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .info p {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .info button {
+    font-size: 0.95rem;
+    margin-top: 25px;
+  }
+
+  .btnProp {
+    padding: 14px 32px;
+  }
+
+  .imgBox {
+    padding: 25px;
+    min-height: 40vh;
+  }
+
+  .serviceCard {
+    max-width: 300px;
+    min-height: 220px;
+    padding: 25px;
+  }
+
+  .serviceCard div {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 15px;
+  }
+
+  .serviceCard h3 {
+    font-size: 1.15rem;
+  }
+
+  .serviceCard p {
+    font-size: 0.9rem;
+  }
+
+  .SCard {
+    padding: 40px 20px;
+    gap: 22px;
+  }
+
+  .missionContainer {
+    padding: 5vh 4vw;
+    gap: 20px;
+  }
+
+  .missionBox {
+    padding: 15px 12px 15px 35px;
+  }
+
+  .missionBox:nth-child(1) {
+    font-size: 1.1rem;
+    padding: 15px 12px;
+  }
+
+  .missionBox h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .missionBox p {
+    font-size: 0.9rem;
+  }
+
+  .missionBox::before {
+    width: 18px;
+    height: 18px;
+    top: 18px;
+  }
+
+  .aboutUs {
+    padding: 50px 25px;
+  }
+
+  .aboutInfo {
+    padding: 0;
+  }
+
+  .aboutContainer h2 {
+    font-size: 1.05rem;
+  }
+
+  .aboutContainer h1,
+  .aboutContainer span {
+    font-size: 1.6rem;
+  }
+
+  .aboutContainer p {
+    font-size: 0.93rem;
+  }
+
+  .socialLinks {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .socialLinks div {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .socialLinks div i {
+    font-size: 1.2rem;
+  }
+
+  footer {
+    padding: 25px 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .section5 {
+    padding-bottom: 40px;
+  }
+
+  .section5 h1 {
+    font-size: 1.7rem;
+    padding-top: 6vh;
+    margin-bottom: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .feedbackContainer {
+    padding: 30px 20px;
+    gap: 22px;
+  }
+
+  .feedCard {
+    max-width: 300px;
+    min-height: 320px;
+    padding: 20px;
+  }
+
+  .feedCard i {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+  }
+
+  .feedCard .fPara div {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+  }
+
+  .feedCard .fTime {
+    font-size: 0.85rem;
+  }
+
+  .section6 h1 {
+    font-size: 1.6rem;
+    padding-top: 6vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section6 #tagline {
+    font-size: 1em;
+    padding: 0 25px;
+    margin-bottom: 30px;
+  }
+
+  .profileContainer {
+    gap: 25px;
+    padding: 0 20px 35px 20px;
+  }
+
+  .profileCard {
+    max-width: 300px;
+    min-height: 420px;
+    padding: 16px;
+  }
+
+  .profileCard .imgDiv {
+    height: 160px;
+    margin-bottom: 12px;
+  }
+
+  .profileCard .PInfo {
+    padding: 0 5px;
+  }
+
+  .profileCard .PInfo h4 {
+    font-size: 0.85rem;
+  }
+
+  .profileCard .PInfo h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .profileCard .PInfo p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .profileCard .Plinks {
+    padding-top: 12px;
+  }
+
+  .profileCard .Plinks i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+}
