@@ -6,10 +6,7 @@ function Section6() {
     <div className='section6'>
       <h1>OUR TEAM</h1>
       <div id='tagline'>Get to know the experts who make your comfort their priority.</div>
-
       <ProfileCard />
-
-   
     </div>
   )
 }

@@ -4,7 +4,7 @@ import Button from './Button'
 function Image1() {
   return (
     <div className='imgBox'>
-<img src="../section1_img.webp" alt="" width={100} />
+<img src="/section1_img.webp" alt="" width={100} />
     </div>
   )
 }
