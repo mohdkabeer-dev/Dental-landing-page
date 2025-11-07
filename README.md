@@ -1,12 +1,40 @@
-# React + Vite
+# 🦷 Dental Clinic Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **Dental Clinic Landing Page** built using **React**.  
+This project was one of my **early practice projects**, created to improve my frontend skills and learn the basics of **component-based UI development**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 About the Project
 
-## Expanding the ESLint configuration
+This landing page is a static, responsive website layout for a dental clinic.  
+It focuses on **clean design**, **basic navigation**, and **section-based UI** such as:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🏥 Hero Section  
+- 👩‍⚕️ About / Services Section  
+- 💬 Testimonials  
+- 📞 Contact Section  
+
+> ⚠️ *Note: This project was made during my early learning phase, so the structure or code organization might not follow best practices.*  
+> I’ve kept it public only as a **milestone of my development journey**.
+
+---
+
+## 🧩 Tech Stack
+
+- **React JS**
+- **CSS**
+- **HTML5 / JSX**
+
+---
+
+## 🎯 Purpose
+
+The main goal of this project was:
+- To **practice basic React concepts** like components and props.  
+- To **understand responsive layouts** using CSS.  
+- To build confidence in creating **real-world landing pages** from scratch.
+
+---
+
+
