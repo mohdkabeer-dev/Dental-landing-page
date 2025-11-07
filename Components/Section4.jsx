@@ -8,7 +8,7 @@ function Section4() {
       <div className='aboutUs flex'>
   <AboutUs />
       </div>
-      <div className='aboutImg'><img src="../section4_img1.jpg" alt="" width={100} /></div>
+      <div className='aboutImg'><img src="public/section4_img1.jpg" alt="" width={100} /></div>
     </div>
   )
 }

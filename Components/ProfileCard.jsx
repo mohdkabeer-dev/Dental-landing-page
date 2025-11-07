@@ -23,7 +23,7 @@ export default function ProfileCard() {
       desc: "Expert in braces and aligners, he transforms smiles with modern orthodontic care as per patient’s need."
     },
     {
-      img: "../profile6.jpg",
+      img: "../section1_img.webp",
       role: "Endodontist",
       name: "Dr. May Dowson",
       desc: "Specialist in root canals, she focuses on saving natural teeth while offering pain-free treatments and compassionate care."
@@ -48,7 +48,7 @@ export default function ProfileCard() {
         {userdata.map((profile, index) => (
           <div className="profileCard" key={index}>
             <div className="imgDiv">
-              <img src={profile.img} alt={profile.name} />
+              <img loading="lazy" src={profile.img} alt={profile.name} />
             </div>
             <div className="PInfo">
               <h4>{profile.role}</h4>
